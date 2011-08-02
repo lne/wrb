@@ -1,0 +1,6 @@
+//alert("<%= escape_javascript @result %>");
+//alert("<%= result_tag_id %>");
+
+$("<%= result_tag_id %>").update(
+  "<%= escape_javascript @result %>"
+);

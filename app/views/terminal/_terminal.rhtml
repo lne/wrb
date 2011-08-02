@@ -1,0 +1,40 @@
+<% eid = "editor_#{@id}" %>
+<div id="term_<%=@id%>" class="tm" style="display:block;">
+  <div id="panel_<%=@id%>" class="tmpl">
+    <div id="title_<%=@id%>" class="tmtl">
+      <%= image_tag('tbb_l.png', :class => 'tmtlleft') %>
+      <label class="tmtlmsg">ruby <%=@version%></label>
+      <label id="tmtlname_<%=@id%>" class="tmtlmsg"></label>
+      <%= image_tag('tbb_r.png', :class => 'tmtlright') %>
+      <%= image_tag('close_terminal.ico', :class => 'tmtlicon', :alt => 'close', :onclick => "$('term_#{@id}').remove();") %>
+    </div>
+      <%= form_for :script, :url => {:controller => "terminal", :action => "listfiles", :id => @id}, :html => {:id => "listfiles_#{@id}"}, :remote => true do |f| %>
+      <% end %>
+    <div id="save_<%=@id%>" class="saveload" style="display:none;">
+      <%= form_for :script, :url => {:controller => "terminal", :action => "save", :id => @id}, :html => {:id => "info_#{@id}"}, :remote => true do |f| %>
+        <input type="hidden" name="fullname" id="fullname_<%=@id%>" value="<%=@fullname%>" />
+        <label>file name: </label>
+        <input type="text" name="basename" id="basename_<%=@id%>" value="<%=@basename%>" maxlength="30" style="ime-mode: disabled" onChange="checkFilename(this);" />
+      <%= f.submit "ok", :onClick => "codeSaveOK('#{eid}');return false;"%>
+      <%= f.submit "cancel", :onClick => "codeSaveCancel('#{eid}');return false;"%>
+      <% end %>
+    </div>
+    <div id="load_<%=@id%>" class="saveload" style="display:none;">
+      <%= form_for :script, :url => {:controller => "terminal", :action => "load", :id => @id}, :html => {:id => "filelist_#{@id}"}, :remote => true do |f| %>
+        <label>select file: </label>
+        <select id="select_<%=@id%>" name="filename">
+          <option value=""></option>
+        </select>
+      <%= f.submit "ok", :onClick => "codeLoadOK('#{eid}');return false;"%>
+      <%= f.submit "cancel", :onClick => "codeLoadCancel('#{eid}');return false;"%>
+      <% end %>
+    </div>
+    <%= form_for :script, :url => {:controller => "terminal", :action => "interpret", :id => @id}, :html => {:id => "main_#{@id}"}, :remote => true do |f| %>
+      <textarea id="<%=eid%>" name="code" class="editarea"> puts "Hello World."</textarea>
+      <input type="hidden" name="version" value="<%=@version%>" />
+    <% end %>
+    <div class="result">
+      <textarea id="<%=result_tag_id%>" class="resultarea" spellcheck='false' contenteditable='false' readonly ></textarea>
+    </div>
+  </div>
+</div>

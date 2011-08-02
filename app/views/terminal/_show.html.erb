@@ -1,0 +1,4 @@
+<% form_for :script, :url => {:controller => "vm", :action => "interpret", :terminal => 1} do |f| %>
+    <textarea id="textarea_1" name="code" cols="80" rows="15"> puts "Hello World."</textarea>
+  <%= submit_tag "run" %>
+<% end %>

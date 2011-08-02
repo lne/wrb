@@ -1,0 +1,101 @@
+img {
+    border: none 0;
+}
+
+#dtis {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+}
+
+#dtis div {
+    margin-top: 10px;
+}
+
+.si1 {
+    margin-left: 2px;
+}
+
+#login {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    width: 100px;
+    height: 15px;
+    border: solid 1px #C0C0C0;
+    z-index: 1;
+}
+
+.tm {
+    position: fixed;
+    top: 15px;
+    width: 510px;
+    height: 520px;
+    z-index: 100;
+}
+
+.tmpl {
+    -moz-box-shadow: 0 0 5px rgba(190,218,254, 1);
+    -webkit-box-shadow: 0 0 5px rgba(190,218,254, 1);
+    box-shadow: 0 0 5px rgba(190,218,254, 1);
+/*    border: solid 1px #C0C0C0; */
+    padding: 2px;
+    background-color: #8CBEFE;
+}
+
+.tmtl {
+    height: 20px;
+    width: 505px;
+    margin-top: -3px;
+    background-image: url("../images/tbb.png");
+    background-repeat: repeat-x;
+}
+
+.tmtlmsg {
+    font-size: 11pt;
+}
+
+#tmtlname {
+/*    float: center; */
+}
+
+.saveload {
+    top: 24px;
+    left: 2px;
+    width: 505px;
+    background-color: blue;
+    position: absolute;
+}
+
+.tmtlicon {
+    border: none 0;
+    height: 15px;
+    width: 15px;
+    float: right;
+}
+
+.tmtlleft {
+    float: left;
+    left: -3px;
+    top: 0px;
+    position: relative;
+}
+
+.tmtlright {
+    float: right;
+    right: -3px;
+    top: 0px;
+    position: relative;
+}
+
+.editarea {
+    position: relative;
+    width: 99%;
+    height: 400px;
+}
+
+.resultarea {
+    width: 500px;
+    height: 100px;
+    font-size: 10pt;
+}

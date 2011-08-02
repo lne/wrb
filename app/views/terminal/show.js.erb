@@ -1,0 +1,7 @@
+
+<% res = "OK" %>
+<% res =  render :partial => 'terminal/show' %>
+<% logger.info res %>
+Element.update($("terminal_<%=@id%>"),'<%= res %>');
+document.getElementById("terminal_<%=@id%>").innerHTML = '<%= res %>';
+

@@ -1,0 +1,3 @@
+<% s = escape_javascript(render(:partial => 'filelist')) %>
+<% select_id = "select_#{@id}" %>
+$('<%=select_id%>').update('<%=s%>');

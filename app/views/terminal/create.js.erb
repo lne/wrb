@@ -1,0 +1,37 @@
+<% s = escape_javascript(render(:partial => 'terminal')) %>
+<% term_id = "term_" + @id.to_s %>
+
+
+// insert
+$('terminals').insert( { bottom: "<%= s %>" } );
+$('<%=term_id%>').hide();
+
+
+// initialize editarea
+editAreaLoader.init({
+  id: "editor_<%=@id%>",
+  syntax: "ruby",
+  start_highlight: true,
+  language: "ja",
+  allow_toggle: false,
+ // toolbar: "new_document, load, save, |, fullscreen, word_wrap, |, select_font",
+  toolbar: "exec, |, load, save, |, fullscreen, word_wrap, |, select_font",
+  save_callback: "saveCode",
+  load_callback: "loadCode",
+  exec_callback: "execCode"
+});
+
+
+// set style
+var h,w, min = 10;
+w = Math.floor(Math.random()*(window.innerWidth - 540));
+h = Math.floor(Math.random()*(window.innerHeight - 540));
+if(h < min) { h = min; }
+if(w < min) { w = min; }
+$('<%=term_id%>').setStyle({ left: w + "px", top:  h + "px", zIndex: topIndex++});
+
+// add action
+new Draggable('<%=term_id%>');
+$('<%=term_id%>').onmousedown = toTop;
+
+$('<%=term_id%>').show();

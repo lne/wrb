@@ -1,0 +1,17 @@
+<div id="dtis">
+   <% 
+    #TODO add mouseover mouseout action
+   %>
+  <div class="si1">
+    <%= link_to image_tag('1.9.png', :alt => '1.9', :title => 'ruby 1.9 interpreter'), {:controller => 'terminal', :action => 'create', :version => '1.9'}, :remote => true %>
+  </div>
+  <div class="si1">
+    <%= link_to image_tag('1.8.png', :alt => '1.8', :title => 'ruby 1.8 interpreter'),  {:controller => 'terminal', :action => 'create', :version => '1.8'}, :remote => true %>
+
+  </div>
+  <div>
+    <%= link_to image_tag('help.png', :alt => 'help', :title => 'the help of wrb'), "javascript:alert('implementing')" %>
+  </div>
+</div>
+
+<div id="terminals"> </div>

@@ -1,0 +1,17 @@
+development:
+  adapter: mysql
+  database: account_development
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: mysql
+  database: account_test
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: mysql
+  database: account_production
+  pool: 5
+  timeout: 5000
