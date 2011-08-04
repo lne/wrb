@@ -1,12 +1,25 @@
+var topIndex = 500;
+var currenttmid = null;
+
 function closeTerminal(id) {
   $(id).style.display = "none";
   return false;
 }
 
-var topIndex = 500;
-
-function toTop() {
+function mousedownActionOfTerm() {
   this.style.zIndex = topIndex++;
+/*
+function toTopLayer() {
+  numid = this.id.split('_').pop();
+  if (numid.match(/^\d+$/)) {
+    currenttmid = "term_".concat(numid);
+    $(currenttmid).style.zIndex = topIndex++;
+  }
+*/
+}
+function setFocus(eid) {
+  currenttmid = eid.gsub('editor','term');
+  $(currenttmid).style.zIndex = topIndex++;
 }
 
 function run(eid) {
@@ -100,3 +113,7 @@ function checkFilename(field) {
   v = v.gsub(/[^\w\.\_]/, '');
   field.value = v;
 }
+
+/********************************
+         shortcut keys
+*********************************/

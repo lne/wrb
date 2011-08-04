@@ -15,10 +15,12 @@ editAreaLoader.init({
   language: "ja",
   allow_toggle: false,
  // toolbar: "new_document, load, save, |, fullscreen, word_wrap, |, select_font",
-  toolbar: "exec, |, load, save, |, fullscreen, word_wrap, |, select_font",
+  toolbar: "exec, |, load, save, |, fullscreen, word_wrap, |, search, go_to_line, undo, redo, |",
+  allow_resize: "y",
   save_callback: "saveCode",
   load_callback: "loadCode",
-  exec_callback: "execCode"
+  exec_callback: "execCode",
+  mousedown_callback: "setFocus"
 });
 
 
@@ -28,10 +30,9 @@ w = Math.floor(Math.random()*(window.innerWidth - 540));
 h = Math.floor(Math.random()*(window.innerHeight - 540));
 if(h < min) { h = min; }
 if(w < min) { w = min; }
-$('<%=term_id%>').setStyle({ left: w + "px", top:  h + "px", zIndex: topIndex++});
+$('<%=term_id%>').setStyle({ left: w + "px", top:  h + "px", zIndex: topIndex++ });
 
 // add action
 new Draggable('<%=term_id%>');
-$('<%=term_id%>').onmousedown = toTop;
-
+$('<%=term_id%>').onmousedown = mousedownActionOfTerm;
 $('<%=term_id%>').show();

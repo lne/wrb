@@ -44,7 +44,8 @@ img {
 }
 
 .tmtl {
-    height: 20px;
+    /*height: 20px;*/
+    height: 22px;
     width: 505px;
     margin-top: -3px;
     background-image: url("../images/tbb.png");
@@ -75,13 +76,15 @@ img {
 }
 
 .tmtlleft {
+    height: 22px;
     float: left;
-    left: -3px;
+    left: -2px;
     top: 0px;
     position: relative;
 }
 
 .tmtlright {
+    height: 22px;
     float: right;
     right: -3px;
     top: 0px;
