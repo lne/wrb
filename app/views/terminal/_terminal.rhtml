@@ -29,12 +29,14 @@
       <%= f.submit "cancel", :onClick => "codeLoadCancel('#{eid}');return false;"%>
       <% end %>
     </div>
-    <%= form_for :script, :url => {:controller => "terminal", :action => "interpret", :id => @id}, :html => {:id => "main_#{@id}"}, :remote => true do |f| %>
-      <textarea id="<%=eid%>" name="code" class="editarea"> puts "Hello World."</textarea>
-      <input type="hidden" name="version" value="<%=@version%>" />
-    <% end %>
+    <div class="code">
+      <%= form_for :script, :url => {:controller => "terminal", :action => "interpret", :id => @id}, :html => {:id => "main_#{@id}"}, :remote => true do |f| %>
+        <textarea id="<%=eid%>" name="code" style="width: <%=@width%>" class="editarea"> puts "Hello World."</textarea>
+        <input type="hidden" name="version" value="<%=@version%>" />
+      <% end %>
+    </div>
     <div class="result">
-      <textarea id="<%=result_tag_id%>" class="resultarea" spellcheck='false' contenteditable='false' readonly ></textarea>
+      <textarea id="<%=result_tag_id%>" style="width: <%=@width%>" class="resultarea" spellcheck='false' contenteditable='false' readonly ></textarea>
     </div>
   </div>
 </div>

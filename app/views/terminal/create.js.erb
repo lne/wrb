@@ -1,5 +1,7 @@
 <% s = escape_javascript(render(:partial => 'terminal')) %>
 <% term_id = "term_" + @id.to_s %>
+<% eid = "editor_" + @id.to_s %>
+<% rid = "term_" + @id.to_s + "_result"%>
 
 
 // insert
@@ -9,7 +11,7 @@ $('<%=term_id%>').hide();
 
 // initialize editarea
 editAreaLoader.init({
-  id: "editor_<%=@id%>",
+  id: "<%=eid%>",
   syntax: "ruby",
   start_highlight: true,
   language: "ja",

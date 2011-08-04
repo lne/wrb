@@ -29,27 +29,28 @@ img {
 .tm {
     position: fixed;
     top: 15px;
-    width: 510px;
-    height: 520px;
-    z-index: 100;
+    width: 504px;
+    z-index: 30;
+    background-color: #8CBEFE;
+    padding: 0px 2px;
 }
 
 .tmpl {
-    -moz-box-shadow: 0 0 5px rgba(190,218,254, 1);
-    -webkit-box-shadow: 0 0 5px rgba(190,218,254, 1);
-    box-shadow: 0 0 5px rgba(190,218,254, 1);
-/*    border: solid 1px #C0C0C0; */
-    padding: 2px;
-    background-color: #8CBEFE;
+/*
+    -moz-box-shadow: 0 0 2px rgba(190,218,254, 1);
+    -webkit-box-shadow: 0 0 2px rgba(190,218,254, 1);
+    box-shadow: 0 0 2px rgba(190,218,254, 1);
+    border: solid 1px #C0C0C0;
+    padding: 2px; */
+    position: relative;
 }
 
 .tmtl {
-    /*height: 20px;*/
     height: 22px;
-    width: 505px;
-    margin-top: -3px;
+    width: 100%;
     background-image: url("../images/tbb.png");
     background-repeat: repeat-x;
+    margin: 0px -2px;
 }
 
 .tmtlmsg {
@@ -78,27 +79,31 @@ img {
 .tmtlleft {
     height: 22px;
     float: left;
-    left: -2px;
-    top: 0px;
+    left: 0px;
     position: relative;
 }
 
 .tmtlright {
     height: 22px;
     float: right;
-    right: -3px;
+    right: -4px;
     top: 0px;
     position: relative;
 }
 
-.editarea {
+.code {
+   /* width: 501px;*/
     position: relative;
-    width: 99%;
-    height: 400px;
+}
+
+.editarea {
+    height: 300px;
+    position: relative;
 }
 
 .resultarea {
-    width: 500px;
     height: 100px;
     font-size: 10pt;
+    resize: vertical;
+    margin-bottom: 2px;
 }
