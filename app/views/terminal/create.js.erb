@@ -17,11 +17,12 @@ editAreaLoader.init({
   language: "ja",
   allow_toggle: false,
  // toolbar: "new_document, load, save, |, fullscreen, word_wrap, |, select_font",
-  toolbar: "exec, |, load, save, |, fullscreen, word_wrap, |, search, go_to_line, undo, redo, |",
+  toolbar: "load, save, |, fullscreen, word_wrap, |, search, go_to_line, undo, redo, |, version_selection, exec",
   allow_resize: "y",
   save_callback: "saveCode",
   load_callback: "loadCode",
   exec_callback: "execCode",
+  change_version: "changeVersion",
   mousedown_callback: "setFocus"
 });
 

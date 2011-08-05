@@ -2,3 +2,4 @@
 <% basename = @fullname[0..-18]%>
 $("tmtlname_<%=@id%>").update("<%=basename%>");
 $("fullname_<%=@id%>").writeAttribute('value', "<%=@fullname%>");
+$("basename_<%=@id%>").writeAttribute('value', "<%=basename%>");

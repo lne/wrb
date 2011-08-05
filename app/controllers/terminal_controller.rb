@@ -9,7 +9,13 @@ class TerminalController < ApplicationController
   # initialize terminal
   def create
     agent = request.headers['HTTP_USER_AGENT']
-    @width = agent.downcase.include?('linux') ? "497px" : "500px"
+logger.error agent
+    @width = case agent.downcase
+             when /linux/, /version\/5.*safari/
+               "497px"
+             else
+               "500px"
+             end
     @id = Time.now.strftime("%y%m%d%H%M%S#{'%03d' % rand(999)}")
     @version = params['version']
     logger.info "[create] #{@version} - #{@id}"

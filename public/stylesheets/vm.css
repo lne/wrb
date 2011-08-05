@@ -1,3 +1,13 @@
+body {
+    min-width:800px;
+    min-height:600px;
+}
+
+form {
+  /* for safari 3*/
+  margin-bottom: 0px;
+}
+
 img {
     border: none 0;
 }
@@ -16,16 +26,6 @@ img {
     margin-left: 2px;
 }
 
-#login {
-    position: fixed;
-    top: 5px;
-    right: 5px;
-    width: 100px;
-    height: 15px;
-    border: solid 1px #C0C0C0;
-    z-index: 1;
-}
-
 .tm {
     position: fixed;
     top: 15px;
@@ -36,12 +36,6 @@ img {
 }
 
 .tmpl {
-/*
-    -moz-box-shadow: 0 0 2px rgba(190,218,254, 1);
-    -webkit-box-shadow: 0 0 2px rgba(190,218,254, 1);
-    box-shadow: 0 0 2px rgba(190,218,254, 1);
-    border: solid 1px #C0C0C0;
-    padding: 2px; */
     position: relative;
 }
 
@@ -62,11 +56,19 @@ img {
 }
 
 .saveload {
-    top: 24px;
-    left: 2px;
-    width: 505px;
-    background-color: blue;
+    top: 23px;
+    width: 504px;
+    background-color: #FFE635;
     position: absolute;
+    z-index: 10;
+}
+
+.saveload label{
+    margin-left: 10px;
+}
+
+.saveload select{
+    width: 100px;
 }
 
 .tmtlicon {
@@ -97,7 +99,7 @@ img {
 }
 
 .editarea {
-    height: 300px;
+    height: 400px;
     position: relative;
 }
 
