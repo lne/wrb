@@ -11,7 +11,7 @@ class TerminalController < ApplicationController
     agent = request.headers['HTTP_USER_AGENT']
 logger.error agent
     @width = case agent.downcase
-             when /linux/, /version\/5.*safari/
+             when /linux/, /version\/5.*safari/, /chrome/
                "497px"
              else
                "500px"
