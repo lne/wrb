@@ -52,6 +52,7 @@ Wrb::Application.routes.draw do
 root :to => "welcome#index"
 post 'terminal/interpret' => 'terminal#interpret'
 post 'terminal/save' => 'terminal#save'
+get  'p/:id' => 'pub#show'
 get  'terminal/show/:id' => 'terminal#show'
 get  'terminal/listfiles' => 'terminal#listfiles'
 get  'terminal/load' => 'terminal#load'

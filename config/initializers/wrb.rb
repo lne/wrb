@@ -1,10 +1,11 @@
 require 'timeout'
-
-$KCODE='u'
+require 'base64'
+require 'rb2html/factory'
 
 JAILR='/jail/readonly'
 JAILS='/jail/save'
-#JAILW='/jail/writable'
 
 TIMEOUT = 5 #s
+
+FORMATTER = Rb2HTML::Factory.get_formatter 'ruby'
 
