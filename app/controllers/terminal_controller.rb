@@ -40,6 +40,23 @@ logger.error agent
     render :text => code
   end
 
+  def share
+    basename = params['basename'].to_s.chomp!
+    basename = 'sample.rb' if basename.blank?
+    fullname = basename + Time.now.strftime(".%y%m%d%H%M%S.#{'%03d' % rand(999)}")
+    code = params['code']
+    raise "code is too long" if code.size > 100.kilobyte
+    File.open(File.join(JAILP, fullname), 'w') {|f| f.puts code}
+    @pub_url = url_for(:controller => 'pub', :action => 'show', :only_path => true, :id => Base64.encode64(fullname).chomp)
+logger.error @pub_url
+    render :text => @pub_url
+  rescue Exception => e
+    #TODO deal with error
+    logger.error "[save][error] => #{e.class}: #{e.message}\n" + e.backtrace.join("\n")
+    @fullname = nil
+    render :status => 500, :text => e.message
+  end
+
   # save code
   def save
     @fullname = params['fullname'].to_s

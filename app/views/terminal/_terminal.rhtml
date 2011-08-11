@@ -10,6 +10,10 @@
     </div>
       <%= form_for :script, :url => {:controller => "terminal", :action => "listfiles", :id => @id}, :html => {:id => "listfiles_#{@id}"}, :remote => true do |f| %>
       <% end %>
+    <div id="pub_<%=@id%>" class="saveload" style="display:none;">
+      <%= form_for :script, :url => {:action => "share"}, :html => {:id => "share_#{@id}"} do |f| %>
+      <% end %>
+    </div>
     <div id="save_<%=@id%>" class="saveload" style="display:none;">
       <%= form_for :script, :url => {:controller => "terminal", :action => "save", :id => @id}, :html => {:id => "info_#{@id}"}, :remote => true do |f| %>
         <input type="hidden" name="fullname" id="fullname_<%=@id%>" value="<%=@fullname%>" />

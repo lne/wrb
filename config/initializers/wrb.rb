@@ -4,6 +4,7 @@ require 'rb2html/factory'
 
 JAILR='/jail/readonly'
 JAILS='/jail/save'
+JAILP='/jail/pub'
 
 TIMEOUT = 5 #s
 

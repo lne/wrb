@@ -3,11 +3,9 @@
 <% eid = "editor_" + @id.to_s %>
 <% rid = "term_" + @id.to_s + "_result"%>
 
-
 // insert
 $('terminals').insert( { bottom: "<%= s %>" } );
 $('<%=term_id%>').hide();
-
 
 // initialize editarea
 editAreaLoader.init({
@@ -17,15 +15,15 @@ editAreaLoader.init({
   language: "ja",
   allow_toggle: false,
  // toolbar: "new_document, load, save, |, fullscreen, word_wrap, |, select_font",
-  toolbar: "load, save, |, fullscreen, word_wrap, |, search, go_to_line, undo, redo, |, version_selection, exec",
+  toolbar: "load, save, |, fullscreen, word_wrap, |, search, go_to_line, undo, redo, |, version_selection, exec, share",
   allow_resize: "y",
   save_callback: "saveCode",
   load_callback: "loadCode",
   exec_callback: "execCode",
+  share_callback: "shareCode",
   change_version: "changeVersion",
   mousedown_callback: "setFocus"
 });
-
 
 // set style
 var h,w, min = 10;
