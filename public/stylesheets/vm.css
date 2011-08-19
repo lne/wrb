@@ -12,16 +12,15 @@ img {
     border: none 0;
 }
 
+textarea {
+    font-family: Verdana,Arial,sans-serif;
+}
+
+
 #helpframe {
     width:501px;
     height:510px;
     border:solid 1px;
-/*
-    background-image: url("../images/hpbk_4.jpg");
-    background-repeat: repeat-y;
-    background-position: top center;
-*/
-  /*}abc:#F0F0E8;"*/
 }
 
 .dti {
@@ -76,15 +75,6 @@ img {
     left:120px;
 }
 
-#wri {
-    position: fixed;
-    width: 604px;
-    padding: 0px 2px;
-    background-color: #8CBEFE;
-    top: 100px;
-    left:120px;
-}
-
 .pl {
     position: relative;
 }
@@ -103,18 +93,6 @@ img {
 
 #tlname {
 /*    float: center; */
-}
-
-#wriin {
-    top: 26px;
-    right: 30px;
-    width: 250px;
-    height: 26px;
-    background-image: url("../images/wriin.png");
-    background-repeat: none;
-    position: absolute;
- /*   z-index: 10;
-*/
 }
 
 .saveload {
@@ -173,16 +151,51 @@ img {
     font-size: 10pt;
     resize: vertical;
     margin-bottom: 2px;
-/*    border: 0px;
-    padding: 2px;
-*/
-}
-#wriin form {
-    margin-top: 1px;
 }
 
-#wriin form label {
-    margin-left: 5px;
+#wri {
+    position: fixed;
+    padding: 0px 2px;
+    background-color: #8CBEFE;
+    top: 100px;
+    left:120px;
+}
+
+#wriin {
+    top: 26px;
+    right: 20px;
+    width: 250px;
+    height: 26px;
+    background-image: url("../images/wriin.png");
+    background-repeat: none;
+    position: absolute;
+}
+
+#writarget{
+    width: 196px;
+    height: 15px;
+    text-align: right;
+    vertical-align: bottom;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+}
+
+#wriform {
+/*    margin-top: 3px;
+    border: none 0;
+    vertical-align: middle;
+    vertical-align: bottom;
+*/
+}
+
+.wrigo {
+    float: right;
+    width: 40px;
+    height: 23px;
+    margin-right: 2px;
+    cursor: pointer;
+    margin-top: 2px;
 }
 
 #wrires {
