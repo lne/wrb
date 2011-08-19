@@ -12,6 +12,38 @@ img {
     border: none 0;
 }
 
+#helpframe {
+    width:501px;
+    height:510px;
+    border:solid 1px;
+/*
+    background-image: url("../images/hpbk_4.jpg");
+    background-repeat: repeat-y;
+    background-position: top center;
+*/
+  /*}abc:#F0F0E8;"*/
+}
+
+.dti {
+    width: 100px;
+}
+.dti a {
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.dti img {
+    margin: 0px;
+    float: center;
+    position: relative;
+}
+.dti p {
+    margin: -2px 0px 0px 0px;
+    color: black;
+    text-align: center;
+    float: center;
+    position: relative;
+}
+
 #dtis {
     position: fixed;
     top: 20px;
@@ -35,11 +67,29 @@ img {
     padding: 0px 2px;
 }
 
-.tmpl {
+#help {
+    position: fixed;
+    width: 504px;
+    padding: 0px 2px;
+    background-color: #8CBEFE;
+    top: 50px;
+    left:120px;
+}
+
+#wri {
+    position: fixed;
+    width: 604px;
+    padding: 0px 2px;
+    background-color: #8CBEFE;
+    top: 100px;
+    left:120px;
+}
+
+.pl {
     position: relative;
 }
 
-.tmtl {
+.tl {
     height: 22px;
     width: 100%;
     background-image: url("../images/tbb.png");
@@ -47,12 +97,24 @@ img {
     margin: 0px -2px;
 }
 
-.tmtlmsg {
+.tlmsg {
     font-size: 11pt;
 }
 
-#tmtlname {
+#tlname {
 /*    float: center; */
+}
+
+#wriin {
+    top: 26px;
+    right: 30px;
+    width: 250px;
+    height: 26px;
+    background-image: url("../images/wriin.png");
+    background-repeat: none;
+    position: absolute;
+ /*   z-index: 10;
+*/
 }
 
 .saveload {
@@ -71,21 +133,24 @@ img {
     width: 100px;
 }
 
-.tmtlicon {
+.tlicon {
+    margin-top: 5px;
+    margin-right: -9px;
     border: none 0;
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     float: right;
+    position: relative;
 }
 
-.tmtlleft {
+.tlleft {
     height: 22px;
     float: left;
     left: 0px;
     position: relative;
 }
 
-.tmtlright {
+.tlright {
     height: 22px;
     float: right;
     right: -4px;
@@ -108,4 +173,23 @@ img {
     font-size: 10pt;
     resize: vertical;
     margin-bottom: 2px;
+/*    border: 0px;
+    padding: 2px;
+*/
+}
+#wriin form {
+    margin-top: 1px;
+}
+
+#wriin form label {
+    margin-left: 5px;
+}
+
+#wrires {
+    margin-top: 0px;
+    margin-bottom: 1px;
+    height: 430px;
+    background-image: url("../images/ribk_3.jpg");
+    background-repeat: repeat-y;
+    background-position: top right;
 }

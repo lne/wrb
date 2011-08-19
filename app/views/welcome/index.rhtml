@@ -2,15 +2,23 @@
    <% 
     #TODO add mouseover mouseout action
    %>
-  <div class="si1">
-    <%= link_to image_tag('ruby-blue.jpg', :size=> '50x50', :alt => '1.9', :title => 'ruby 1.9 interpreter'), {:controller => 'terminal', :action => 'create', :version => '1.9'}, :remote => true %>
+  <div class="dti">
+    <a href="<%=url_for(:controller => 'terminal', :action => 'create')%>" data-remote="true">
+      <p><%= image_tag('wrb64.png', :alt => 'terminal', :title => 'terminal') %></p>
+      <p>wrb</p>
+    </a>
   </div>
-  <div class="si1">
-    <%= link_to image_tag('ruby-grean.jpg', :size => '50x50',:alt => '1.8', :title => 'ruby 1.8 interpreter'),  {:controller => 'terminal', :action => 'create', :version => '1.8'}, :remote => true %>
-
+  <div class="dti">
+    <a href="<%=url_for(:controller => 'welcome', :action => 'wri')%>" data-remote="true">
+      <p><%= image_tag('samples64.png', :alt => 'wri', :title => 'wri') %></p>
+      <p>wri</p>
+    </a>
   </div>
-  <div>
-    <%= link_to image_tag('help.png', :alt => 'help', :title => 'the help of wrb'), "javascript:alert('implementing')" %>
+  <div class="dti">
+    <a href="<%=url_for(:controller => 'welcome', :action => 'help')%>" data-remote="true">
+      <p><%= image_tag('help64.png', :alt => 'help', :title => 'help of wrb') %></p>
+      <p>help</p>
+    </a>
   </div>
 </div>
 

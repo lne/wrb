@@ -235,7 +235,7 @@ var Draggable = Class.create({
       },
       endeffect: function(element) {
         var toOpacity = Object.isNumber(element._opacity) ? element._opacity : 1.0;
-        new Effect.Opacity(element, {duration:0.2, from:0.7, to:toOpacity,
+        new Effect.Opacity(element, {duration:0.2, from:0.9, to:toOpacity,
           queue: {scope:'_draggable', position:'end'},
           afterFinish: function(){
             Draggable._dragging[element] = false
@@ -257,7 +257,7 @@ var Draggable = Class.create({
         starteffect: function(element) {
           element._opacity = Element.getOpacity(element);
           Draggable._dragging[element] = true;
-          new Effect.Opacity(element, {duration:0.2, from:element._opacity, to:0.7});
+          new Effect.Opacity(element, {duration:0.2, from:element._opacity, to:0.9});
         }
       });
 

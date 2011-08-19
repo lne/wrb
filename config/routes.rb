@@ -50,6 +50,11 @@ Wrb::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
 root :to => "welcome#index"
+get 'welcome/help' => 'welcome#help'
+get 'welcome/helpimp' => 'welcome#helpimp'
+get 'welcome/wri' => 'welcome#wri'
+post 'welcome/ri' => 'welcome#ri'
+
 post 'terminal/interpret' => 'terminal#interpret'
 post 'terminal/save' => 'terminal#save'
 post 'terminal/share' => 'terminal#share'

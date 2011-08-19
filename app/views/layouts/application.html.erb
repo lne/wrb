@@ -2,12 +2,14 @@
 <html>
 <head>
   <title>wrb ruby学習/オンラインインタプリタ</title>
-  <%= stylesheet_link_tag :all %>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <%= stylesheet_link_tag 'vm' %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'vm' %>
   <%= javascript_include_tag 'edit_area/edit_area_full.js' %>
   <%= csrf_meta_tag %>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="keywords" content="wrb,ruby,online,interpreter,editor,share,tool" />
 </head>
 <body id="main">
 <%= yield %>
