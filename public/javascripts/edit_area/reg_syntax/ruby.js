@@ -54,7 +54,7 @@ editAreaLoader.load_syntax["ruby"] = {
 		'COMMENTS': 'color: #AAAAAA;'
 		,'QUOTESMARKS': 'color: #660066;'
 		,'KEYWORDS' : {
-			'reserved' : 'font-weight: bold; color: #0000FF;'
+			'reserved' : 'color: #0000FF;'
 			}
 		,'OPERATORS' : 'color: #993300;'
 		,'DELIMITERS' : 'color: #993300;'

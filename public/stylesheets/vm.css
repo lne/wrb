@@ -16,6 +16,10 @@ textarea {
     font-family: Verdana,Arial,sans-serif;
 }
 
+a {
+    text-decoration: none;
+    font-family: Georgia,freeserif,serif;
+}
 
 #helpframe {
     width:501px;
@@ -151,6 +155,9 @@ textarea {
     font-size: 10pt;
     resize: vertical;
     margin-bottom: 2px;
+    background-image: url("../images/resbk_2.jpg");
+    background-repeat: repeat-y;
+    background-position: top center;
 }
 
 #wri {
