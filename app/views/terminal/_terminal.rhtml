@@ -35,7 +35,7 @@
     </div>
     <div class="code">
       <%= form_for :script, :url => {:controller => "terminal", :action => "interpret", :id => @id}, :html => {:id => "main_#{@id}"}, :remote => true do |f| %>
-        <textarea id="<%=eid%>" name="code" style="width: <%=@width%>" class="editarea"> puts "Hello World."</textarea>
+        <textarea id="<%=eid%>" name="code" style="width: <%=@width%>" class="editarea"><%=@init_code%></textarea>
         <input type="hidden" name="version" value="<%=@version%>" />
       <% end %>
     </div>

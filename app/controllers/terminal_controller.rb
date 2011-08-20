@@ -18,7 +18,17 @@ logger.error agent
              end
     @id = Time.now.strftime("%y%m%d%H%M%S#{'%03d' % rand(999)}")
     @version = params['version']
-    logger.info "[create] #{@version} - #{@id}"
+    @init_code =<<_CODE_
+#
+#= sample code of wrb
+#
+# Test the method of String#fetch
+#
+a = [ "A", "B", "C" ]
+puts a.fetch(1)
+puts a.fetch(-1)
+puts a.fetch(999, "OK")
+_CODE_
   end
 
   # update file list before loading file
@@ -37,7 +47,7 @@ logger.error agent
     #TODO deal with error
     logger.error "[save][error] => #{e.class}: #{e.message}\n" + e.backtrace.join("\n")
   ensure
-    render :text => code
+    render :text => code.chomp
   end
 
   def share

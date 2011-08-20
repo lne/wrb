@@ -10,6 +10,10 @@ function mousedownActionOfTerm(){
   this.style.zIndex = topIndex++;
 }
 
+function setFocusToHelp(){
+  $('help').style.zIndex = topIndex++;
+}
+
 function setFocus(eid){
   currenttmid = eid.gsub('editor','term');
   $(currenttmid).style.zIndex = topIndex++;
