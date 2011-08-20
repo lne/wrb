@@ -93,6 +93,17 @@ a {
 
 .tlmsg {
     font-size: 11pt;
+    position: relative;
+    width: 400px;
+    float: left;
+    left: 40px;
+    margin: 0px;
+    border: 0px;
+    padding: 1px 0px 0px;
+    font-weight: bold;
+    color: #922626;
+    text-align: center;
+    vertical-align: middle;
 }
 
 #tlname {
@@ -102,7 +113,8 @@ a {
 .saveload {
     top: 23px;
     width: 504px;
-    background-color: #FFE635;
+/*    background-color: #FFE635;*/
+    background-color: #FECA98;
     position: absolute;
     z-index: 10;
 }

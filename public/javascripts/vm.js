@@ -70,7 +70,7 @@ function codeLoadOK(eid){
   ldid = eid.gsub('editor','load');
   fnid = eid.gsub('editor','fullname');
   bnid = eid.gsub('editor','basename');
-  tmtlnmid = eid.gsub('editor','tmtlname');
+  tmtlnmid = eid.gsub('editor','tlname');
   $(formid).request({
    // parameters: { 'code': editAreaLoader.getValue(eid) },
     method: 'get',

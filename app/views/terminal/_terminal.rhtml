@@ -4,7 +4,7 @@
     <div id="title_<%=@id%>" class="tl">
       <%= image_tag('tbb_l.png', :class => 'tlleft') %>
       <label class="tlmsg"></label>
-      <label id="tlname_<%=@id%>" class="tlmsg"></label>
+      <p id="tlname_<%=@id%>" class="tlmsg"></p>
       <%= image_tag('tbb_r.png', :class => 'tlright') %>
       <%= image_tag('close2.png', :class => 'tlicon', :alt => 'close', :onclick => "$('term_#{@id}').remove();", :mouseover => image_path("close1.png"))%>
     </div>
