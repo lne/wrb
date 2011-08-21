@@ -21,7 +21,7 @@ class TerminalController < ApplicationController
 #
 #= sample code of wrb
 #
-# Test String#fetch
+# Test Array#fetch
 #
 a = [ "A", "B", "C" ]
 puts a.fetch(1)
@@ -57,6 +57,7 @@ _CODE_
     raise "code is too long" if code.size > 100.kilobyte
     File.open(File.join(JAILP, fullname), 'w') {|f| f.puts code}
     @pub_url = url_for(:controller => 'pub', :action => 'show', :only_path => true, :id => Base64.encode64(fullname).chomp)
+logger.info @pub_url
     render :text => @pub_url
   rescue Exception => e
     #TODO deal with error
