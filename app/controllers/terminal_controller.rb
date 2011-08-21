@@ -9,7 +9,6 @@ class TerminalController < ApplicationController
   # initialize terminal
   def create
     agent = request.headers['HTTP_USER_AGENT']
-logger.error agent
     @width = case agent.downcase
              when /linux/, /version\/5.*safari/, /chrome/
                "497px"
@@ -22,7 +21,7 @@ logger.error agent
 #
 #= sample code of wrb
 #
-# Test the method of String#fetch
+# Test String#fetch
 #
 a = [ "A", "B", "C" ]
 puts a.fetch(1)
@@ -58,7 +57,6 @@ _CODE_
     raise "code is too long" if code.size > 100.kilobyte
     File.open(File.join(JAILP, fullname), 'w') {|f| f.puts code}
     @pub_url = url_for(:controller => 'pub', :action => 'show', :only_path => true, :id => Base64.encode64(fullname).chomp)
-logger.error @pub_url
     render :text => @pub_url
   rescue Exception => e
     #TODO deal with error
@@ -105,19 +103,16 @@ logger.error @pub_url
     code =  params['code']
     version =  params['version'] || '1.9'
     @result = exec(code, version)
-    logger.info @result
     if session.has_key?('test')
       session['test'] += 1
     else
       session['test'] = 1
     end
-    logger.info session.inspect
   end
 
   private
 
   def parse_id
     @id = params['id']
-    logger.info @id
   end
 end

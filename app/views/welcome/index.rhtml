@@ -2,6 +2,7 @@
    <% 
     #TODO add mouseover mouseout action
    %>
+<% if @supported_browser %>
   <div class="dti">
     <a href="<%=url_for(:controller => 'terminal', :action => 'create')%>" data-remote="true">
       <p><%= image_tag('wrb64.png', :alt => 'terminal', :title => 'terminal') %></p>
@@ -14,6 +15,9 @@
       <p>wri</p>
     </a>
   </div>
+<% else %>
+  <h2>Sorry your browser is not supported now, please see help for more information.</h2>
+<% end %>
   <div class="dti">
     <a href="<%=url_for(:controller => 'welcome', :action => 'help')%>" data-remote="true">
       <p><%= image_tag('help64.png', :alt => 'help', :title => 'help of wrb') %></p>

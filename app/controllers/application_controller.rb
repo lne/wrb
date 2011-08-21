@@ -24,6 +24,17 @@ class ApplicationController < ActionController::Base
     err_r.close unless err_r.closed?
   end
 
+  def exec_with_retry(code, version, filename = 'line')
+    10.times do
+      res = exec_without_retry(code, version, filename = 'line')
+      return res unless res=~/sudo:\sunknown\suid:\s501/
+      logger.info "retry"
+    end
+    ""
+  end
+
+  alias_method_chain :exec, :retry
+
   private
 
   def process_tempfile(data, name = '')

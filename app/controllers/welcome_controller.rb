@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   def index
+    agent = request.headers['HTTP_USER_AGENT'].downcase
+    @supported_browser = agent.match(/msie/) ? false : true
   end
 
   def notfound
@@ -56,9 +58,7 @@ USAGE
       return
     end
     t.gsub!(/[\*\>\<\&\(\)\{\}\"\'\@\`\.\;\:\\\/]/) { |m| p m; '\\'+m }
-logger.error t
     @result = `/usr/local/bin/ri -f rdoc -T #{t}`
     @result = "Error: Nothing known about #{params['target']} " if @result.blank?
-logger.info @result
   end
 end

@@ -145,3 +145,7 @@ function checkFilename(field){
 /********************************
          shortcut keys
 *********************************/
+function initShortcutKey(){
+}
+
+window.onload=initShortcutKey;

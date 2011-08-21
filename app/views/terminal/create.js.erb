@@ -37,3 +37,15 @@ $('<%=term_id%>').setStyle({ left: w + "px", top:  h + "px", zIndex: topIndex++ 
 new Draggable('<%=term_id%>');
 $('<%=term_id%>').onmousedown = mousedownActionOfTerm;
 $('<%=term_id%>').show();
+
+// shortcut key
+shortcut.add("Alt+R",
+  function(){
+    alert("x");
+  },
+  {
+    'type':'keydown',
+    'propagate':true,
+    'target':'<%=term_id%>'
+  }
+);
