@@ -8,7 +8,7 @@ class TerminalController < ApplicationController
 
   # initialize terminal
   def create
-    agent = request.headers['HTTP_USER_AGENT']
+    agent = request.headers['HTTP_USER_AGENT'].to_s
     @width = case agent.downcase
              when /linux/, /version\/5.*safari/, /chrome/
                "497px"

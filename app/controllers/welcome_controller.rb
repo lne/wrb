@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    agent = request.headers['HTTP_USER_AGENT'].downcase
+    agent = request.headers['HTTP_USER_AGENT'].downcase rescue ""
     @supported_browser = agent.match(/msie/) ? false : true
   end
 
@@ -15,7 +15,7 @@ class WelcomeController < ApplicationController
   end
 
   def wri
-    agent = request.headers['HTTP_USER_AGENT']
+    agent = request.headers['HTTP_USER_AGENT'] rescue ""
     @width = case agent.downcase
              when /linux/, /version\/5.*safari/, /chrome/
                "572px"
