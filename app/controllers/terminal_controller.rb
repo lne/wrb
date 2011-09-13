@@ -9,15 +9,31 @@ class TerminalController < ApplicationController
   # initialize terminal
   def create
     agent = request.headers['HTTP_USER_AGENT'].to_s
+     @init_code = nil 
+    if params['type'] == 'init'
+      if session['target']
+        path = session['target'].to_s
+        session['target'] = nil
+        path.gsub!(/%(25)*3D/, '=')
+        path = Base64.decode64(path)
+        if File.exist?(path)
+          @init_code = File.open(path).read rescue nil
+        end
+      else
+        render :nothing => true
+        return
+      end
+    end
     @width = case agent.downcase
-             when /linux/, /version\/5.*safari/, /chrome/
+             when /linux/, /version\/5.*safari/, /chrome/, /presto/, /maxthon/
                "497px"
              else
                "500px"
              end
     @id = Time.now.strftime("%y%m%d%H%M%S#{'%03d' % rand(999)}")
-    @version = params['version']
-    @init_code =<<_CODE_
+    @version = params['version'] || '1.9.2'
+    if @init_code.nil?
+      @init_code =<<_CODE_
 #
 #= sample code of wrb
 #
@@ -28,6 +44,7 @@ puts a.fetch(1)
 puts a.fetch(-1)
 puts a.fetch(999, "OK")
 _CODE_
+    end
   end
 
   # update file list before loading file

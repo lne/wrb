@@ -12,7 +12,11 @@
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <meta name="keywords" content="wrb,ruby,online,interpreter,editor,share,tool" />
 </head>
+<%- if @init_terminal -%>
+<body id="main" onload="initTerminal();">
+<%- else -%>
 <body id="main">
+<%- end -%>
 <%= yield %>
 </body>
 </html>

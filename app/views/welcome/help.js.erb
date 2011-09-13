@@ -1,0 +1,14 @@
+if ($('help') == null) {
+  <% s = escape_javascript(render(:partial => 'help')) %>
+  $('main').insert( { bottom: "<%= s %>" } );
+  $('help').setStyle({ left: "120px", top: "50px", zIndex: topIndex++ });
+  new Draggable('help');
+  $('help').onmousedown = mousedownActionOfTerm;
+  $('help').show();
+  $('helpframe').contentWindow.document.addEventListener('mouseup', function(e){alert(1);});
+  //$('helpframe').click(function(){alert(1);});
+}
+else {
+  $('help').style.zIndex = topIndex++;
+}
+
