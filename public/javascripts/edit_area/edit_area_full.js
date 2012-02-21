@@ -22,7 +22,7 @@ if(ua2.match(/Chrome/)){
 }else{
   html+='height:25px';
 }
-html+="\"><option style='color:black' value='1.9'>ruby 1.9.2</option><option style='color:black' value='1.8'>ruby 1.8.7</option></select>";return html;case "syntax_selection":html="<select id='syntax_selection' onchange='javascript:editArea.execCommand(\"change_syntax\",this.value)' fileSpecific='yes'>";html+="<option value='-1'>{$syntax_selection}</option>";html+="</select>";return html;}return "<span id='tmp_tool_"+button_name+"'>["+button_name+"]</span>";},get_template:function(){if(this.template==""){var xhr_object=null;if(window.XMLHttpRequest)xhr_object=new XMLHttpRequest();
+html+="\"><option style='color:black' value='1.9.3'>ruby 1.9.3</option><option style='color:black' value='1.9.2'>ruby 1.9.2</option><option style='color:black' value='1.8.7'>ruby 1.8.7</option></select>";return html;case "syntax_selection":html="<select id='syntax_selection' onchange='javascript:editArea.execCommand(\"change_syntax\",this.value)' fileSpecific='yes'>";html+="<option value='-1'>{$syntax_selection}</option>";html+="</select>";return html;}return "<span id='tmp_tool_"+button_name+"'>["+button_name+"]</span>";},get_template:function(){if(this.template==""){var xhr_object=null;if(window.XMLHttpRequest)xhr_object=new XMLHttpRequest();
 else if(window.ActiveXObject)xhr_object=new ActiveXObject("Microsoft.XMLHTTP");
 else{alert("XMLHTTPRequest not supported. EditArea not loaded");return;}xhr_object.open("GET",this.baseURL+"template.html",false);xhr_object.send(null);if(xhr_object.readyState==4)this.template=xhr_object.responseText;
 else this.has_error();}},translate:function(text,lang,mode){if(mode=="word")text=eAL.get_word_translation(text,lang);

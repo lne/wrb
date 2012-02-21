@@ -1,0 +1,46 @@
+<% eid = "editor_#{@id}" %>
+<div id="term_<%=@id%>" class="tm" style="display:block;">
+  <div id="panel_<%=@id%>" class="pl">
+    <div id="title_<%=@id%>" class="tl">
+      <%= image_tag('tbb_l.png', :class => 'tlleft') %>
+      <label class="tlmsg"></label>
+      <p id="tlname_<%=@id%>" class="tlmsg"></p>
+      <%= image_tag('tbb_r.png', :class => 'tlright') %>
+      <%= image_tag('close2.png', :class => 'tlicon', :alt => 'close', :onclick => "$('term_#{@id}').remove();", :mouseover => image_path("close1.png"))%>
+    </div>
+      <%= form_for :script, :url => {:controller => "terminal", :action => "listfiles", :id => @id}, :html => {:id => "listfiles_#{@id}"}, :remote => true do |f| %>
+      <% end %>
+    <div id="pub_<%=@id%>" class="saveload" style="display:none;">
+      <%= form_for :script, :url => {:action => "share"}, :html => {:id => "share_#{@id}"} do |f| %>
+      <% end %>
+    </div>
+    <div id="save_<%=@id%>" class="saveload" style="display:none;">
+      <%= form_for :script, :url => {:controller => "terminal", :action => "save", :id => @id}, :html => {:id => "info_#{@id}"}, :remote => true do |f| %>
+        <input type="hidden" name="fullname" id="fullname_<%=@id%>" value="<%=@fullname%>" />
+        <label>file name: </label>
+        <input type="text" name="basename" id="basename_<%=@id%>" value="<%=@basename%>" maxlength="30" style="ime-mode: disabled" onChange="checkFilename(this);" />
+      <%= f.submit "ok", :onClick => "codeSaveOK('#{eid}');return false;"%>
+      <%= f.submit "cancel", :onClick => "codeSaveCancel('#{eid}');return false;"%>
+      <% end %>
+    </div>
+    <div id="load_<%=@id%>" class="saveload" style="display:none;">
+      <%= form_for :script, :url => {:controller => "terminal", :action => "load", :id => @id}, :html => {:id => "filelist_#{@id}"}, :remote => true do |f| %>
+        <label>select file: </label>
+        <select id="select_<%=@id%>" name="filename">
+          <option value=""></option>
+        </select>
+      <%= f.submit "ok", :onClick => "codeLoadOK('#{eid}');return false;"%>
+      <%= f.submit "cancel", :onClick => "codeLoadCancel('#{eid}');return false;"%>
+      <% end %>
+    </div>
+    <div class="code">
+      <%= form_for :script, :url => {:controller => "terminal", :action => "interpret", :id => @id}, :html => {:id => "main_#{@id}"}, :remote => true do |f| %>
+        <textarea id="<%=eid%>" name="code" style="width: <%=@width%>" class="editarea"><%=@init_code%></textarea>
+        <input type="hidden" name="version" value="<%=@version%>" />
+      <% end %>
+    </div>
+    <div class="result">
+      <textarea id="<%=result_tag_id%>" style="width: <%=@width%>" class="resultarea" spellcheck='false' contenteditable='false' readonly ></textarea>
+    </div>
+  </div>
+</div>

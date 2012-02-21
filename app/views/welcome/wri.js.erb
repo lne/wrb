@@ -1,0 +1,12 @@
+if ($('wri') == null) {
+  <% s = escape_javascript(render(:partial => 'wri')) %>
+  $('main').insert( { bottom: "<%= s %>" } );
+  $('wri').setStyle({ left: "120px", top: "100px", zIndex: topIndex++ });
+  new Draggable('wri');
+  $('wri').onmousedown = mousedownActionOfTerm;
+  $('wri').show();
+}
+else {
+  $('wri').style.zIndex = topIndex++;
+}
+

@@ -1,7 +1,14 @@
 class WelcomeController < ApplicationController
   def index
     agent = request.headers['HTTP_USER_AGENT'].downcase rescue ""
+    logger.info agent
     @supported_browser = agent.match(/msie/) ? false : true
+    @init_terminal = @supported_browser
+  end
+
+  def show
+    session['target'] = params['target']
+    redirect_to '/'
   end
 
   def notfound

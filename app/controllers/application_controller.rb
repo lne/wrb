@@ -9,11 +9,13 @@ class ApplicationController < ActionController::Base
     end
     out_w.close
     err_w.close
-    res = out_r.read
-    if res.size > 10.kilobyte
-      res = "<wrb system limitation> result is over than 10 KB.\n"
+    res = err_r.read(10.kilobyte)
+    if res.nil?
+      res = out_r.read(10.kilobyte) || ''
+      if res.size >= 10.kilobyte
+        res = "<wrb system limitation> result is over than 10 KB.\n"
+      end
     end
-    res += err_r.read
     logger.debug "result: #{res}"
     res.gsub(/\/tmp\/#{tmpname}/, filename)
   ensure
@@ -52,13 +54,13 @@ class ApplicationController < ActionController::Base
 
   def exec_with_restriction(name, ver, out, err)
     pid      = nil
-    ruby     = '/bin/ruby-' + (ver == '1.8' ? '1.8.7' : '1.9.2')
+    ruby     = '/bin/ruby-' + ver 
     filepath = File.join('/tmp', name)
     cmd      = "sudo /usr/sbin/chroot #{JAILR} #{ruby} #{filepath}"
     env      = { "PATH"=>"/usr/bin:/bin" }
     options  = { :chdir => '/', :out => out, :err => err, :unsetenv_others => true }
     options[:rlimit_core]   = [0, 50.megabyte]
-    options[:rlimit_cpu]    = 60          # second
+    options[:rlimit_cpu]    = 5           # second
     options[:rlimit_nofile] = 100         # count
     options[:rlimit_nproc]  = 100         # count
     options[:rlimit_data]   = 50.megabyte # second

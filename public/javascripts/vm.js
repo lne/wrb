@@ -1,6 +1,13 @@
 var topIndex = 500;
 var currenttmid = null;
 
+function initTerminal(){
+  new Ajax.Request('/terminal/create', {
+    method:'get',
+    parameters: { type: 'init' }
+  });
+}
+
 function closeTerminal(id){
   $(id).style.display = "none";
   return false;

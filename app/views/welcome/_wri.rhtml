@@ -1,0 +1,20 @@
+<div id="wri" style="display:none">
+  <div class="pl">
+    <div class="tl">
+      <%= image_tag('tbb_l.png', :class => 'tlleft') %>
+      <label class="tmtlmsg"></label>
+      <%= image_tag('tbb_r.png', :class => 'tlright') %>
+      <%= image_tag('close2.png', :class => 'tlicon', :alt => 'close', :onclick => "$('wri').remove();", :mouseover => image_path("close1.png"))%>
+    </div>
+    <div id="wriin" class="wriin">
+      <%= form_for :script, :url => {:controller => "welcome", :action => "ri"}, :html => {:id => "wriform"}, :remote => true do |f| %>
+        <label> </label>
+        <input type="text" name="target" id="writarget" maxlength="50" style="ime-mode: disabled" />
+        <%= image_submit_tag('go_5.gif', :class => 'wrigo') %>
+      <% end %>
+    </div>
+    <div class="result">
+      <textarea id="wrires" style="width: <%=@width%>" class="resultarea" spellcheck='false' contenteditable='false' readonly ><%=@wri_usage%></textarea>
+    </div>
+  </div>
+</div>

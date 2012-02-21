@@ -54,7 +54,6 @@ get 'welcome/help' => 'welcome#help'
 get 'welcome/helpimp' => 'welcome#helpimp'
 get 'welcome/wri' => 'welcome#wri'
 post 'welcome/ri' => 'welcome#ri'
-get 'show' => 'welcome#show'
 
 post 'terminal/interpret' => 'terminal#interpret'
 post 'terminal/save' => 'terminal#save'
