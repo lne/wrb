@@ -31,11 +31,7 @@ class TerminalController < ApplicationController
                "500px"
              end
     @id = Time.now.strftime("%y%m%d%H%M%S#{'%03d' % rand(999)}")
-<<<<<<< HEAD
     @version = params['version'] || '1.9.3'
-=======
-    @version = params['version'] || '1.9.2'
->>>>>>> 7ed92960be6667c2d27fbc03efa9ba921b2ac5df
     if @init_code.nil?
       @init_code =<<_CODE_
 #
