@@ -1,7 +1,16 @@
 == Welcome to WRB (web ruby)
 
-This project has been published to http://wrb.dyndns-free.com/
+This project has been published to http://wrb.rubychina.info
 
+Version 1.1.0
+ * 2012/06/06
+ * fixed bug of infinite loop.
+ * changed vps server.
+ * wrb-interpreter release.
+
+Version 1.0.1
+ * 2012/02/22
+ * ruby 1.9.3 supported.
 
 Version 1.0.0
  * 2011/08/27

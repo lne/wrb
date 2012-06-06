@@ -123,7 +123,7 @@ body { min-width:500px; }
       var _assname = encodeURI("24771790");
       var _appkey = encodeURI("42d1a993fab2475490c8cf99709b2870");
       var _pic = encodeURI('');
-      var _site = 'http://49.212.55.160';
+      var _site = 'http://wrb.rubychina.info';
       var _u = 'http://v.t.qq.com/share/share.php?url='+_url+'&appkey='+_appkey+'&site='+_site+'&pic='+_pic+'&title='+_t+'&assname='+_assname;
       window.open( _u,'', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
       }
@@ -135,7 +135,7 @@ body { min-width:500px; }
         data-related="weidongfeng:The author of wrb"
         data-text="I write a #ruby code by #wrb: "
         data-count="none"
-        data-counturl="49.212.55.160">Tweet
+        data-counturl="wrb.rubychina">Tweet
       </a>
     </span>
   </div>
@@ -151,7 +151,7 @@ EOF
   def file_end(id)
     res =<<RESULT
 <div>
-  <iframe src="http://49.212.55.160/p/i?id=#{id}" style="border:0;width:100%;height:500px;">
+  <iframe src="http://wrb.rubychina/p/i?id=#{id}" style="border:0;width:100%;height:500px;">
   </iframe>
 </div>
 RESULT
