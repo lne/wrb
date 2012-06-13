@@ -135,7 +135,7 @@ body { min-width:500px; }
         data-related="weidongfeng:The author of wrb"
         data-text="I write a #ruby code by #wrb: "
         data-count="none"
-        data-counturl="wrb.rubychina">Tweet
+        data-counturl="wrb.rubychina.info">Tweet
       </a>
     </span>
   </div>
@@ -151,7 +151,7 @@ EOF
   def file_end(id)
     res =<<RESULT
 <div>
-  <iframe src="http://wrb.rubychina/p/i?id=#{id}" style="border:0;width:100%;height:500px;">
+  <iframe src="http://wrb.rubychina.info/p/i?id=#{id}" style="border:0;width:100%;height:500px;">
   </iframe>
 </div>
 RESULT
